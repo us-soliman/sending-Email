@@ -3,7 +3,9 @@ import { el, all, crtEl } from './func-var.js';
 
 function sendEmail() {
     Email.send({
+        //--
         SecureToken : "317236fa-a6c3-499a-b10a-953e0882338d",
+        //---
         To: "samoz.designer@gmail.com",
         From: "samoz.designer@gmail.com",
         Subject: el('#client-subject').value,
