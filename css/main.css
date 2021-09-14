@@ -1,0 +1,322 @@
+/* =========================== Variables CSS ============ Start === */
+:root{
+  font-size: 16px;
+  --bk-l: hsl(154, 26%, 74%);
+  --bk-m: #F4F7C5;
+  --bk-s: #ffbc6b;
+  --class: rgba(255, 255, 255, 0.05);
+  /* -------- */
+  --hover: #ffbc6b;
+  /* -------- */
+  --border: #9c4678;
+  --border-oth: #469c82;
+  /* ------- */
+  --big-h: #222831;
+  --small-h: #9c4678;
+  /* ------- */
+  --txt-1: #252A34;
+  --txt-2: #252A34;
+  /* --------- Font & Size */
+  --body-font: 'Roboto','Open Sans', sans-serif;
+  --biggest-size: 5rem;
+  --bigger-size: 3.5rem;
+  --big-size: 2.5rem;
+  --me-size: 1.5rem;
+  --s1-size: .938rem;
+  --s2-size: .813rem;
+}
+/* =========================== Variables CSS ============ End === */
+
+/* ================== Responsive (Screen)  ============ Start === */
+/* Start----------------small Screen ----------- */
+@media (min-width: 768px){
+  .container{
+    width: 750px;
+  }
+}
+
+/* Start--------------Medium Screen ----------- */
+@media screen and (min-width: 992px) {
+  :root{
+    font-size: 14px;
+  /* --------- Font & Size */
+  --body-font: 'Roboto','Open Sans', sans-serif;
+  --biggest-size: 7rem;
+  --bigger-size: 4.5rem;
+  --big-size: 2rem;
+  --me-size: 1rem;
+  --s1-size: .875rem;
+  --s2-size: .813rem;
+  }
+  .container{
+    width: 970px;
+  }                                   
+}
+/* Start--------------Large Screen------------------------------- */
+@media (min-width: 1200px) {
+  .container{
+    width: 1170px;
+  }
+}
+/* End----------------Large Screen------------------------------- */
+/* =================================  Screen ============ End === */
+
+/* ================================== Base ============ Start === */
+html{
+  scroll-behavior: smooth;
+}
+*::after,
+*::before,
+*{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  /* outline: 1px solid #dddd; */
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: var(--bk-l , #505963);
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--bk-s , #e0edf5);
+}
+*::selection{
+  background:  #505963;
+  color: #e0edf5;
+}
+h1,h2,h3,h4,h5,p{font-family: var(--body-font);}
+a {text-decoration: none;}
+ul {list-style: none;}
+/* =================================== Base ============ End ==== */
+
+/* ================ Dark or Light (Theme) ============ Start ==== */
+  body.theme-brush{
+    --bk-l: #E3FDFD;
+    --bk-m: #71C9CE;
+    --bk-s: #40514E;
+    /* -------- */
+    --hover: #86f1f1;
+    /* -------- */
+    --border: #6b4968;
+    --border-oth: #145a6b;
+    /* ------- */
+    --big-h: #E3FDFD;
+    --small-h: #313f3c;
+    /* ------- */
+    --txt-1: #252A34;
+    --txt-2: #000000;
+  }
+@media (prefers-color-scheme: dark) {
+  body.theme-dark{
+    --bk-l: #222831;
+    --bk-m: #393E46;
+    --bk-s: #00ADB5;
+    /* -------- */
+    --hover: #00ADB5;
+    /* -------- */
+    --border: #867e02;
+    --border-oth: #b9d8cc;
+    /* ------- */
+    --big-h: #222831;
+    --small-h: #00ADB5;
+    /* ------- */
+    --txt-1: #252A34;
+    --txt-2: #eee;  
+  }
+}
+/* ============================================================== */
+body{
+  background-color: var(--bk-l);
+}
+.container{
+  margin: 0 auto;
+}
+/* -------------------------------------------------------------- */
+section{
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background: url(../image/map.jpg);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--bk-m);
+}
+section.contact-us .overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(2px);
+}
+section.contact-us h1{
+  position: relative;
+  font-size: 6em;
+  color: var(--bk-s);
+  text-transform: uppercase;
+}
+section nav{
+  position: relative;
+  width: 100%;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: .2em solid var(--border); */
+}
+section nav i{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2em;
+  height: 2em;
+  margin-right: 2em;
+  font-size: 1.5em;
+  color: var(--border-oth);
+  border-radius: 50%;
+  cursor: pointer;
+}
+section nav i.active{
+  background-color: rgba(255, 255, 255, 0.3);
+}
+div.all{
+  position: relative;
+  padding: 1em;
+  display: flex;
+  justify-content: flex-end;
+}
+div.all .box{
+  margin: auto;
+  position: relative;
+  width: 80%;
+  background: var(--class);
+  backdrop-filter: blur(30px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+div.all .box .info{
+  width: 30%;
+  height: fit-content;
+  background: var(--bk-m);
+  padding: 1%;
+  margin-left: -35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+div.all .box .info h3{
+  margin-bottom: 10%;
+  color: var(--bk-s);
+  font-size: 1.8em;
+  text-transform: capitalize;
+}
+section .box .info div{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+section .box .info div + div{
+  margin-top: 5%;
+}
+section .box .info div i{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: .15rem solid var(--border);
+  border-radius: 50%;
+  margin-right: 10%;
+  color: var(--txt-2);
+}
+section .box .info div p{
+  width: 75%;
+}
+div.all .box .contact{
+  width: 85%;
+  padding-right: 15%;
+}
+div.all .box .contact form{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em;
+  margin-left: 8%;
+  font-family: var(--body-font);
+  font-size: calc(var(--me-size) *1.2);
+}
+/* div.all .contact form input:not(:last-child){
+  margin-bottom: 2rem;
+} */
+
+div.all .box .contact form textarea,
+div.all .box .contact form input:not(input[type="submit"]){
+  position: relative;
+  background-color: transparent;
+  color: #eee;
+  margin-bottom: 2rem;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  outline: none;
+  padding: 1.5rem 0 0 0;
+  padding-inline-start: 0;
+}
+div.all .box .contact form textarea{
+  resize: vertical;
+}
+div.all .box .contact form div input{
+  margin-right: 2rem;
+}
+div.all .box .contact form textarea::placeholder,
+div.all .box .contact form input::placeholder{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: var(--border-oth);
+  font-size: 1.3rem;
+  opacity: .5;
+  transition: .5s;
+  text-transform: capitalize;
+}
+div.all .box .contact form textarea:focus::placeholder,
+div.all .box .contact form input:focus::placeholder{
+  top: 0;
+  transform: translateY(0);
+  color: var(--border-oth);
+  font-size: 1rem;
+  opacity: 1;
+}
+div.all .box .contact form input[type="submit"]{
+  display: block;
+  width: 25%;
+  border: none;
+  outline: none;
+  background-color: var(--bk-s);
+  font-size:1.5rem ;
+  padding: 1%;
+  font-weight: bold;
+  letter-spacing: .3em;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+/* ================ map ============ Start ==== */
+
+
+
+
