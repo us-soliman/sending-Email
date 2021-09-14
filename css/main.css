@@ -282,6 +282,10 @@ div.all .box .contact form textarea{
 div.all .box .contact form div input{
   margin-right: 2rem;
 }
+div.all .box .contact form textarea:focus,
+div.all .box .contact form input:focus{
+  background-color: transparent;
+}
 div.all .box .contact form textarea::placeholder,
 div.all .box .contact form input::placeholder{
   position: absolute;
