@@ -22,3 +22,4 @@ function sendEmail() {
         });
 }
 el('#sub-mail').addEventListener('click' ,sendEmail)
+
