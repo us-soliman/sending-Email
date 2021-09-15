@@ -244,6 +244,7 @@ section .box .info div i{
   color: var(--txt-2);
 }
 section .box .info div p{
+  color: var(--txt-2);
   width: 75%;
 }
 div.all .box .contact{
